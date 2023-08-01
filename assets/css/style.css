@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: none;
+}
+
+body{
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+header{
+    width: 100%;
+    height: 56px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .menu{
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+}
+
+/* Header MENU */
+.menu .menu-lines{
+    position: relative;
+    z-index: 4;
+    padding-right: 32px;
+    top: 3px;
+}
+
+.menu-lines span{
+    display: block;
+    width: 21px;
+    height: 2px;
+    margin-bottom: 5px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 1px;
+    transition: all ease .2s;
+}
+
+.checkbox:checked ~ .menu-lines span:nth-child(1){
+    transform-origin: 0% 0%;
+    transform: rotate(45deg) scaleX(.98);    
+}
+
+.checkbox:checked ~ .menu-lines span:nth-child(2){
+    opacity: 0;    
+}
+
+.checkbox:checked ~ .menu-lines span:nth-child(3){
+    transform-origin: 0% 100%;
+    transform: rotate(-45deg) scaleX(.98);
+}
+
+.checkbox {
+    position: absolute;
+    z-index: 5;
+    width: 21px;
+    height: 21px;
+    opacity: 0;
+    cursor: pointer;
+    top: 19px;
+    left: 24px;
+}
+
+.checkbox:checked ~ ul {
+    background-color: white;
+    margin-left: 0;
+}
+
+nav ul{
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: calc(100vh - 100px);
+    padding-top: 80px;
+    background-color: #3d3d3d;
+    margin-left: -300px;
+    transition: all ease .3s;
+}
+
+nav ul li{
+    padding: 0px 52px;
+}
+
+nav ul li a {
+    color: #000;
+    font-size: 1.375rem;
+    transform: all ease .3s;
+    padding: 20px;
+    display: flex;
+}
+
+nav ul li a:hover{
+    color: rgba(204, 0, 0, 1);
+    background-color: #f2f1f1;
+    border-radius: 10px;
+    width: 80%;
+}
+
+#icon-youtube{
+    background: url('../images/youtube-logo.png') no-repeat center;
+    width: 90px;
+    height: 20px;
+    position: absolute;
+    top: 18px;
+    left: 76px;
+}
+
+
+/* Header .BAR-SEARCH */
+header .bar-search{
+    text-align: center;
+    flex: 1 0 200px;
+}
+
+.bar-search form input, form button{
+    border: 1px solid rgba(204, 204, 204, 1);
+    height: 40px;
+}
+
+.bar-search input{
+    width: 50%;
+    padding-left: 5px;
+}
+
+.bar-search button{
+    position: absolute;
+    width: 57px;
+    margin-left: -1px;
+    cursor: pointer;
+}
+
+.bar-search #icon-search{
+    background: url('../images/search.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+}
+
+/* Header .USER */
+header .user{
+    margin-right: 18px;
+    gap: 1rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user #icon-video{
+    background: url('../images/video.png') no-repeat center;
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+}
+
+.user #icon-bell{
+    background: url('../images/bell.png') no-repeat center;
+    width: 24px;
+    height: 24px;
+    padding: 6px;
+}
+
+.user a:hover{
+    background: rgb(209, 209, 209);
+    border-radius: 50%;
+}
+
+/* MAIN */
+.wrapper{
+    padding: 28px 75px 0 75px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.wrapper h1, h2{
+    margin: 16px 0 16px 0;
+}
+
+.wrapper h1{
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.wrapper h2{
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.wrapper p{
+    font-size: 0.875rem;
+    width: 92%;
+}
+
+.wrapper main{
+    width: 952px;
+    flex-shrink: 1;
+}
+
+@media only screen and (max-width: 1440px) {
+    main{
+        flex-flow: 1;
+    }
+    aside {
+        flex-basis: 952px;
+    }
+}
+
+main .video-container{
+    padding-bottom: 56.25%;
+    position: relative;
+}
+.video-container iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+main .bar-channel{
+    width: 92%;
+    height: 42px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bar-channel button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.bar-channel .channel{
+    text-align: left;
+    margin-left: 12px;
+}
+
+.channel h2, .channel p{
+    margin: inherit;
+}
+
+.bar-channel .inscrever{
+    width: 159px;
+    height: 100%;
+    background: rgba(204, 0, 0, 1);
+    color: white;
+    font-size: 0.875rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.bar-channel button div{
+    margin-right: 4px;
+}
+
+.bar-channel button div ~ p{
+    font-weight: 600;
+}
+
+#icon-like{
+    background: url(../images/thumbs-up.png) no-repeat;
+    min-width: 24px;
+    height: 24px;
+}
+#icon-nolike{
+    background: url(../images/thumbs-down.png) no-repeat;
+    min-width: 24px;
+    height: 24px;
+}
+#icon-share{
+    background: url(../images/share.png) no-repeat;
+    min-width: 24px;
+    height: 24px;
+}
+#icon-down{
+    background: url(../images/download.png) no-repeat;
+    min-width: 24px;
+    height: 24px;
+}
+
+/* ASIDE */
+
+section{
+    display: flex;
+    margin-bottom: 17px;
+}
+
+section .thumb-video{
+    width: 196px;
+    height: 89px;
+    margin-left: 16px;
+    flex-grow: 2;
+}
+
+.thumb-video h3{
+    font-size: 0.875rem;
+}
+
+.thumb-video p{
+    font-size: 0.75rem;
+    margin: 8px 0 7px 0;
+}
